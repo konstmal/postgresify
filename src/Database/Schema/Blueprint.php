@@ -195,4 +195,26 @@ class Blueprint extends BaseBlueprint
     {
         return $this->addColumn('money', $column);
     }
+
+    /**
+     * Create a new geo point column on the table.
+     *
+     * @param  string  $column
+     * @return \Illuminate\Support\Fluent
+     */
+    public function geoPoint($column)
+    {
+        return $this->addColumn('geoPoint', $column);
+    }
+
+    /**
+     * Create a new geo polygon column on the table.
+     *
+     * @param  string  $column
+     * @return \Illuminate\Support\Fluent
+     */
+    public function geoPolygon($column)
+    {
+        return $this->addColumn('geoPolygon', $column);
+    }
 }

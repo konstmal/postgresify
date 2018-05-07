@@ -218,4 +218,29 @@ class PostgresGrammar extends BasePostgresGrammar
     {
         return 'daterange';
     }
+
+
+    /**
+     * Create the column definition for a geo point (latitude, longitude).
+     *
+     * @param  \Illuminate\Support\Fluent  $column
+     * @return string
+     */
+
+    protected function typeGeoPoint(Fluent $column)
+    {
+        return 'geography(Point,4326)';
+    }
+
+    /**
+     * Create the column definition for a geo polygon represented by a list of points (vertices of the polygon).
+     *
+     * @param  \Illuminate\Support\Fluent  $column
+     * @return string
+     */
+    protected function typeGeoPolygon(Fluent $column)
+    {
+        return 'geography(Polygon,4326)';
+    }
+
 }
